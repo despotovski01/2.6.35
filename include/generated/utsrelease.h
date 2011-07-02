@@ -1,0 +1,1 @@
+#define UTS_RELEASE "2.6.35.10-franco.Kernel.v1-GINGERBREAD-PRE.RELEASE"
