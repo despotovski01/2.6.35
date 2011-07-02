@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.35.10
-# Sat Jul  2 03:28:55 2011
+# Linux kernel version: 2.6.35.13
+# Sat Jul  2 19:50:37 2011
 #
 CONFIG_ARM=y
 CONFIG_SYS_SUPPORTS_APM_EMULATION=y
@@ -123,9 +123,9 @@ CONFIG_PERF_EVENTS=y
 # CONFIG_PERF_COUNTERS is not set
 CONFIG_VM_EVENT_COUNTERS=y
 CONFIG_COMPAT_BRK=y
-# CONFIG_SLAB is not set
+CONFIG_SLAB=y
 # CONFIG_SLUB is not set
-CONFIG_SLQB=y
+# CONFIG_SLQB is not set
 # CONFIG_SLOB is not set
 CONFIG_PROFILING=y
 CONFIG_OPROFILE=m
@@ -505,6 +505,7 @@ CONFIG_CMDLINE="init=/sbin/init root=/dev/ram rw initrd=0x11000000,16M console=t
 # CONFIG_CMDLINE_FORCE is not set
 # CONFIG_XIP_KERNEL is not set
 # CONFIG_KEXEC is not set
+CONFIG_AUTO_ZRELADDR=y
 
 #
 # CPU Power Management
@@ -2356,9 +2357,6 @@ CONFIG_MAGIC_SYSRQ=y
 CONFIG_DEBUG_FS=y
 # CONFIG_HEADERS_CHECK is not set
 # CONFIG_DEBUG_KERNEL is not set
-CONFIG_SLQB_DEBUG=y
-# CONFIG_SLQB_DEBUG_ON is not set
-# CONFIG_SLQB_SYSFS is not set
 CONFIG_STACKTRACE=y
 CONFIG_DEBUG_BUGVERBOSE=y
 # CONFIG_DEBUG_MEMORY_INIT is not set
