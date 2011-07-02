@@ -195,15 +195,11 @@ ENTRY(v6_flush_kern_dcache_area)
  *	- start   - virtual start address of region
  *	- end     - virtual end address of region
  */
-<<<<<<< HEAD
-ENTRY(v6_dma_inv_range)
-=======
 v6_dma_inv_range:
 #ifdef CONFIG_DMA_CACHE_RWFO
 	ldrb	r2, [r0]			@ read for ownership
 	strb	r2, [r0]			@ write for ownership
 #endif
->>>>>>> e155fc7... Update: Linux upstream 2.6.35.10 > 2.6.35.13
 	tst	r0, #D_CACHE_LINE_SIZE - 1
 	bic	r0, r0, #D_CACHE_LINE_SIZE - 1
 #ifdef HARVARD_CACHE

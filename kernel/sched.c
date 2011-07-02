@@ -82,9 +82,6 @@
 
 #define CREATE_TRACE_POINTS
 #include <trace/events/sched.h>
-/*LGE_CHANGE_S [bluerti@lge.com] 2010-04-01 <For Error Handler>*/
-extern int LG_ErrorHandler_enable ;
-/*LGE_CHANGE_E [bluerti@lge.com] 2010-04-01 <For Error Handler>*/
 
 /*
  * Convert user-nice values [ -20 ... 0 ... 19 ]
@@ -274,9 +271,8 @@ struct task_group {
 	struct list_head children;
 
 #ifdef CONFIG_SCHED_AUTOGROUP
-  	struct autogroup *autogroup;
+	struct autogroup *autogroup;
 #endif
-
 };
 
 #define root_task_group init_task_group
@@ -632,7 +628,7 @@ static inline struct task_group *task_group(struct task_struct *p)
 			lockdep_is_held(&task_rq(p)->lock));
 	tg = container_of(css, struct task_group, css);
 
-  	return autogroup_task_group(p, tg);
+	return autogroup_task_group(p, tg);
 }
 
 /* Change a task's cfs_rq and parent entity if it moves across CPUs/groups */
@@ -4196,7 +4192,7 @@ do_wait_for_common(struct completion *x, long timeout, int state, int iowait)
 			if (iowait)
 				timeout = io_schedule_timeout(timeout);
 			else
-				timeout = schedule_timeout(timeout);
+			timeout = schedule_timeout(timeout);
 			spin_lock_irq(&x->wait.lock);
 		} while (!x->done && timeout);
 		__remove_wait_queue(&x->wait, &wait);
@@ -4210,14 +4206,6 @@ do_wait_for_common(struct completion *x, long timeout, int state, int iowait)
 static long __sched
 wait_for_common(struct completion *x, long timeout, int state, int iowait)
 {
-/*LGE_CHANGE_S [bluerti@lge.com] 2010-04-01 <For Error Handler>*/
-	if (LG_ErrorHandler_enable) {
-		int i;
-		for(i=0; i<0x10000;i++) 
-			;
-		return 0;
-	}
-/*LGE_CHANGE_E [bluerti@lge.com] 2010-04-01 <For Error Handler>*/
 	might_sleep();
 
 	spin_lock_irq(&x->wait.lock);
@@ -8391,12 +8379,12 @@ void sched_move_task(struct task_struct *tsk)
 		tsk->sched_class->prep_move_group(tsk, on_rq);
 #endif
 
+	set_task_rq(tsk, task_cpu(tsk));
+
 #ifdef CONFIG_FAIR_GROUP_SCHED
-	if (tsk->sched_class->task_move_group)
-		tsk->sched_class->task_move_group(tsk, on_rq);
-	else
+	if (tsk->sched_class->moved_group)
+		tsk->sched_class->moved_group(tsk, on_rq);
 #endif
-		set_task_rq(tsk, task_cpu(tsk));
 
 	if (unlikely(running))
 		tsk->sched_class->set_curr_task(rq);
