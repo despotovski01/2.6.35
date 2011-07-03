@@ -1,0 +1,10 @@
+--- kernel/sysctl.c	2010-08-02 11:12:25.000000000 +1000
++++ kernel/sysctl.c	2011-05-17 10:46:18.880580642 +1000
+@@ -388,6 +394,7 @@
+ 		.mode		= 0644,
+ 		.proc_handler	= proc_dointvec,
+ 	},
++#endif /* !CONFIG_SCHED_BFS */
+ #ifdef CONFIG_PROVE_LOCKING
+ 	{
+ 		.procname	= "prove_locking",
