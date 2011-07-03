@@ -814,36 +814,9 @@ void update_wall_time(void)
 	maxshift = (8*sizeof(tick_length) - (ilog2(tick_length)+1)) - 1;
 	shift = min(shift, maxshift);
 	while (offset >= timekeeper.cycle_interval) {
-<<<<<<< HEAD
 		offset = logarithmic_accumulation(offset, shift);
 		if(offset < timekeeper.cycle_interval<<shift)
 			shift--;
-=======
-		u64 nsecps = (u64)NSEC_PER_SEC << timekeeper.shift;
-
-		/* accumulate one interval */
-		offset -= timekeeper.cycle_interval;
-		clock->cycle_last += timekeeper.cycle_interval;
-
-		timekeeper.xtime_nsec += timekeeper.xtime_interval;
-		if (timekeeper.xtime_nsec >= nsecps) {
-			timekeeper.xtime_nsec -= nsecps;
-			xtime.tv_sec++;
-			second_overflow();
-		}
-
-		raw_time.tv_nsec += timekeeper.raw_interval;
-		if (raw_time.tv_nsec >= NSEC_PER_SEC) {
-			raw_time.tv_nsec -= NSEC_PER_SEC;
-			raw_time.tv_sec++;
-		}
-
-		/* accumulate error between NTP and clock interval */
-		timekeeper.ntp_error += tick_length;
-		timekeeper.ntp_error -=
-		    (timekeeper.xtime_interval + timekeeper.xtime_remainder) <<
-					timekeeper.ntp_error_shift;
->>>>>>> 5d3c9fc... time: Compensate for rounding on odd-frequency clocksources
 	}
 
 	/* correct the clock when NTP error is too big */

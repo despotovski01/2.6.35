@@ -1,7 +1,11 @@
 /*
  * Automatically generated C config: don't edit
  * Linux kernel version: 2.6.35.13
- * Sun Jul  3 21:21:34 2011
+<<<<<<< HEAD
+ * Sun Jul  3 03:34:10 2011
+=======
+ * Sat Jul  2 21:01:01 2011
+>>>>>>> parent of 8b3b501... Added BFS 404 for testing purposes
  */
 #define AUTOCONF_INCLUDED
 #define CONFIG_RING_BUFFER 1
@@ -263,7 +267,6 @@
 #define CONFIG_USB_ANDROID_CDC_ECM 1
 #define CONFIG_INET_XFRM_MODE_TRANSPORT 1
 #define CONFIG_CRYPTO_MD5 1
-#define CONFIG_DM_CRYPT_GLOBAL_WORKQUEUES 1
 #define CONFIG_DEBUG_USER 1
 #define CONFIG_PM_OPS 1
 #define CONFIG_MEDIA_TUNER_TEA5767 1
@@ -510,7 +513,7 @@
 #define CONFIG_COMMON_CLKDEV 1
 #define CONFIG_MSM_CAMERA 1
 #define CONFIG_COMPAT_BRK 1
-#define CONFIG_LOCALVERSION "-franco.Kernel.v1-GINGERBREAD"
+#define CONFIG_LOCALVERSION "-franco.Kernel.v1-GINGERBREAD-PRE.RELEASE"
 #define CONFIG_RADIO_ADAPTERS 1
 #define CONFIG_CRYPTO 1
 #define CONFIG_DEFAULT_MMAP_MIN_ADDR 4096

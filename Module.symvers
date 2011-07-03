@@ -2707,7 +2707,11 @@
 0x00000000	sysfs_format_mac	vmlinux	EXPORT_SYMBOL
 0x00000000	sk_send_sigurg	vmlinux	EXPORT_SYMBOL
 0x00000000	drop_super	vmlinux	EXPORT_SYMBOL
+<<<<<<< HEAD
+=======
 0x00000000	cgroup_add_file	vmlinux	EXPORT_SYMBOL_GPL
+0x00000000	printk	vmlinux	EXPORT_SYMBOL
+>>>>>>> parent of 8b3b501... Added BFS 404 for testing purposes
 0x00000000	msm_chg_rpc_close	vmlinux	EXPORT_SYMBOL
 0x00000000	sk_alloc	vmlinux	EXPORT_SYMBOL
 0x00000000	bus_unregister_notifier	vmlinux	EXPORT_SYMBOL_GPL
@@ -3551,7 +3555,6 @@
 0x00000000	ktime_add_ns	vmlinux	EXPORT_SYMBOL_GPL
 0x00000000	skb_append_datato_frags	vmlinux	EXPORT_SYMBOL
 0x00000000	release_firmware	vmlinux	EXPORT_SYMBOL
-0x00000000	vzalloc_node	vmlinux	EXPORT_SYMBOL
 0x00000000	jiffies_to_msecs	vmlinux	EXPORT_SYMBOL
 0x00000000	jiffies_to_usecs	vmlinux	EXPORT_SYMBOL
 0x00000000	pmic_spkr_set_gain	vmlinux	EXPORT_SYMBOL
@@ -4253,7 +4256,6 @@
 0x00000000	ip6_dst_lookup	vmlinux	EXPORT_SYMBOL_GPL
 0x00000000	i2c_new_device	vmlinux	EXPORT_SYMBOL_GPL
 0x00000000	device_for_each_child	vmlinux	EXPORT_SYMBOL_GPL
-0x00000000	vzalloc	vmlinux	EXPORT_SYMBOL
 0x00000000	timespec_to_jiffies	vmlinux	EXPORT_SYMBOL
 0x00000000	hci_resume_dev	vmlinux	EXPORT_SYMBOL
 0x00000000	rpc_shutdown_client	vmlinux	EXPORT_SYMBOL_GPL
