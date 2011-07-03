@@ -3869,8 +3869,6 @@ recheck:
 				case SCHED_BATCH:
 					if (policy == SCHED_BATCH)
 						goto out;
-					if (policy == SCHED_NORMAL)
-						break;
 					if (policy != SCHED_IDLEPRIO)
 						return -EPERM;
 					break;
