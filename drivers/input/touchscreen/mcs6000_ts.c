@@ -48,10 +48,6 @@ struct vreg {
 };
 
 #ifdef CONFIG_HAS_EARLYSUSPEND
-#undef CONFIG_HAS_EARLYSUSPEND
-#endif
-
-#ifdef CONFIG_HAS_EARLYSUSPEND
 #include <linux/earlysuspend.h>
 
 static void mcs6000_early_suspend(struct early_suspend *h);

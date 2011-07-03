@@ -29,10 +29,6 @@
 
 #include <mach/board_lge.h>
 
-#ifdef CONFIG_HAS_EARLYSUSPEND
-#undef CONFIG_HAS_EARLYSUSPEND
-#endif
-
 #define AMI304_DRV_NAME		"ami304"
 #define DRIVER_VERSION		"1.0.11.19"
 
