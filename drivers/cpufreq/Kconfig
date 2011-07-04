@@ -163,6 +163,7 @@ config CPU_FREQ_DEFAULT_GOV_SMARTASS
 	help
 	  Use the CPUFreq governor 'smartass' as default.
 
+<<<<<<< HEAD
 config CPU_FREQ_GOV_SMARTASS
 	tristate "'smartass' cpufreq governor"
 	depends on CPU_FREQ
@@ -170,6 +171,15 @@ config CPU_FREQ_GOV_SMARTASS
 	  'smartass' - a "smart" optimized governor for the hero!
 
 	  If in doubt, say N.
+=======
+config CPU_FREQ_DEFAULT_GOV_SCARY
+	bool "scary"
+	select CPU_FREQ_GOV_SCARY
+	help
+		Use the CPUFreq governor 'scary' as default.
+
+endchoice
+>>>>>>> 4a9e4c9... Add 'scary' governor (scaryghoul)
 
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
@@ -264,4 +274,21 @@ config CPU_FREQ_GOV_CONSERVATIVE
 
 	  If in doubt, say N.
 
+<<<<<<< HEAD
+=======
+config CPU_FREQ_GOV_SMARTASS
+	tristate "'smartass' cpufreq governor"
+	depends on CPU_FREQ
+	help
+		'smartass' - a "smart" optimized governor
+
+config CPU_FREQ_GOV_SCARY
+	tristate "'scary' cpufreq governor"
+	depends on CPU_FREQ
+	help
+		scary - a governor for cabbages
+
+		If in doubt, say N.
+
+>>>>>>> 4a9e4c9... Add 'scary' governor (scaryghoul)
 endif	# CPU_FREQ

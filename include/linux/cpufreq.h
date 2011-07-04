@@ -369,6 +369,18 @@ extern struct cpufreq_governor cpufreq_gov_ondemand;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE)
 extern struct cpufreq_governor cpufreq_gov_conservative;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_conservative)
+<<<<<<< HEAD
+=======
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_INTERACTIVE)
+extern struct cpufreq_governor cpufreq_gov_interactive;
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_interactive)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SMARTASS)
+extern struct cpufreq_governor cpufreq_gov_smartass;
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_smartass)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SCARY)
+extern struct cpufreq_governor cpufreq_gov_scary;
+#define CPUFREQ_DEFAULT_GOVERNOR    (&cpufreq_gov_scary)
+>>>>>>> 4a9e4c9... Add 'scary' governor (scaryghoul)
 #endif
 
 
