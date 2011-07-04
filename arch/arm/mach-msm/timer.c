@@ -866,7 +866,6 @@ static void msm_timer_get_sclk_time_start(
 	data->timeout = 200000;
 }
 
-<<<<<<< HEAD
 /*
  * Callback function that checks the timeout.
  */
@@ -876,77 +875,6 @@ static bool msm_timer_get_sclk_time_expired(
 	udelay(10);
 	return --data->timeout <= 0;
 }
-=======
-static struct msm_clock msm_clocks[] = {
-	[MSM_CLOCK_GPT] = {
-		.clockevent = {
-			.name           = "gp_timer",
-			.features       = CLOCK_EVT_FEAT_ONESHOT,
-			.shift          = 32,
-			.rating         = 200,
-			.set_next_event = msm_timer_set_next_event,
-			.set_mode       = msm_timer_set_mode,
-		},
-		.clocksource = {
-			.name           = "gp_timer",
-			.rating         = 200,
-			.read           = msm_gpt_read,
-			.mask           = CLOCKSOURCE_MASK(32),
-			.shift          = 17,
-			.flags          = CLOCK_SOURCE_IS_CONTINUOUS,
-		},
-		.irq = {
-			.name    = "gp_timer",
-			.flags   = IRQF_DISABLED | IRQF_TIMER |
-				   IRQF_TRIGGER_RISING,
-			.handler = msm_timer_interrupt,
-			.dev_id  = &msm_clocks[0].clockevent,
-			.irq     = INT_GP_TIMER_EXP
-		},
-#if defined(CONFIG_ARCH_MSM7X30)
-		.regbase = MSM_TMR_BASE + 4,
-#else
-		.regbase = MSM_GPT_BASE,
-#endif
-		.freq = GPT_HZ,
-		.flags   =
-			MSM_CLOCK_FLAGS_UNSTABLE_COUNT |
-			MSM_CLOCK_FLAGS_ODD_MATCH_WRITE |
-			MSM_CLOCK_FLAGS_DELAYED_WRITE_POST,
-		.write_delay = 9,
-	},
-	[MSM_CLOCK_DGT] = {
-		.clockevent = {
-			.name           = "dg_timer",
-			.features       = CLOCK_EVT_FEAT_ONESHOT,
-			.shift          = 32 + MSM_DGT_SHIFT,
-			.rating         = DG_TIMER_RATING,
-			.set_next_event = msm_timer_set_next_event,
-			.set_mode       = msm_timer_set_mode,
-		},
-		.clocksource = {
-			.name           = "dg_timer",
-			.rating         = DG_TIMER_RATING,
-			.read           = msm_dgt_read,
-			.mask           = CLOCKSOURCE_MASK((32-MSM_DGT_SHIFT)),
-			.shift          = 24 - MSM_DGT_SHIFT,
-			.flags          = CLOCK_SOURCE_IS_CONTINUOUS,
-		},
-		.irq = {
-			.name    = "dg_timer",
-			.flags   = IRQF_DISABLED | IRQF_TIMER |
-				   IRQF_TRIGGER_RISING,
-			.handler = msm_timer_interrupt,
-			.dev_id  = &msm_clocks[1].clockevent,
-			.irq     = INT_DEBUG_TIMER_EXP
-		},
-		.regbase = MSM_DGT_BASE,
-		.freq = DGT_HZ >> MSM_DGT_SHIFT,
-		.shift = MSM_DGT_SHIFT,
-		.write_delay = 9,
-	}
-};
->>>>>>> 4fc01c2... msm: timer: Increase write delay on dg_timer
 
 /*
  * Retrieve the cycle count from the sclk and convert it into
