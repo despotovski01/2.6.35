@@ -31,9 +31,13 @@
 #include <mach/msm_smd.h>
 #include <mach/peripheral-loader.h>
 
+<<<<<<< HEAD
 #include "smd_private.h"
 
 #define MAX_SMD_TTYS 37
+=======
+#define MAX_SMD_TTYS 32
+>>>>>>> e7f031e... msm: smd_tty: limit buffer size requested from tty framework
 #define MAX_TTY_BUF_SIZE 2048
 
 static DEFINE_MUTEX(smd_tty_lock);
@@ -89,6 +93,12 @@ static void smd_tty_read(unsigned long param)
 
 		if (avail > MAX_TTY_BUF_SIZE)
 			avail = MAX_TTY_BUF_SIZE;
+<<<<<<< HEAD
+=======
+
+		ptr = NULL;
+		avail = tty_prepare_flip_string(tty, &ptr, avail);
+>>>>>>> e7f031e... msm: smd_tty: limit buffer size requested from tty framework
 
 		avail = tty_prepare_flip_string(tty, &ptr, avail);
 		if (avail <= 0) {
