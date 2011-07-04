@@ -245,6 +245,7 @@ config DM_CRYPT
 
 config DM_CRYPT_GLOBAL_WORKQUEUES
 	boolean "Use global instead of per-device work-queues (EXPERIMENTAL)"
+	default y;
 	depends on DM_CRYPT && EXPERIMENTAL && EMBEDDED
 	---help---
 	  Normally 2 kernel work-queue threads are created for every

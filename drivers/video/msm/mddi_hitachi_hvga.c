@@ -594,11 +594,11 @@ static int mddi_hitachi_lcd_store_on(void)
 #if defined(CONFIG_MACH_MSM7X27_THUNDERG)
 	if (lge_bd_rev <= LGE_REV_E) {
 		display_table(mddi_hitachi_initialize_1st, sizeof(mddi_hitachi_initialize_1st)/sizeof(struct display_table));
-		mdelay(50);
+		mdelay(200);
 		display_table(mddi_hitachi_display_on_1st, sizeof(mddi_hitachi_display_on_1st) / sizeof(struct display_table));
 	} else {
 		display_table(mddi_hitachi_initialize_3rd_p500, sizeof(mddi_hitachi_initialize_3rd_p500)/sizeof(struct display_table));
-		mdelay(50);
+		mdelay(200);
 		display_table(mddi_hitachi_display_on_3rd, sizeof(mddi_hitachi_display_on_3rd) / sizeof(struct display_table));
 	}
 #elif defined(CONFIG_MACH_MSM7X27_THUNDERA)
