@@ -163,7 +163,6 @@ config CPU_FREQ_DEFAULT_GOV_SMARTASS
 	help
 	  Use the CPUFreq governor 'smartass' as default.
 
-<<<<<<< HEAD
 config CPU_FREQ_GOV_SMARTASS
 	tristate "'smartass' cpufreq governor"
 	depends on CPU_FREQ
@@ -171,7 +170,7 @@ config CPU_FREQ_GOV_SMARTASS
 	  'smartass' - a "smart" optimized governor for the hero!
 
 	  If in doubt, say N.
-=======
+
 config CPU_FREQ_DEFAULT_GOV_SCARY
 	bool "scary"
 	select CPU_FREQ_GOV_SCARY
@@ -187,8 +186,6 @@ config CPU_FREQ_DEFAULT_GOV_MINMAX
 	  frequency jumps does by the governor. This is aimed at maximizing
 	  both perfomance and battery life.
 
-endchoice
->>>>>>> 4a9e4c9... Add 'scary' governor (scaryghoul)
 
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
@@ -283,8 +280,6 @@ config CPU_FREQ_GOV_CONSERVATIVE
 
 	  If in doubt, say N.
 
-<<<<<<< HEAD
-=======
 config CPU_FREQ_GOV_SMARTASS
 	tristate "'smartass' cpufreq governor"
 	depends on CPU_FREQ
@@ -299,9 +294,6 @@ config CPU_FREQ_GOV_SCARY
 
 		If in doubt, say N.
 
-<<<<<<< HEAD
->>>>>>> 4a9e4c9... Add 'scary' governor (scaryghoul)
-=======
 config CPU_FREQ_GOV_MINMAX
 	tristate "'minmax' cpufreq governor"
 	depends on CPU_FREQ
@@ -333,5 +325,4 @@ config CPU_FREQ_VDD_LEVELS
 	help
 		CPU Vdd levels sysfs interface
 
->>>>>>> fc7a1db... Add 'minmax' governor
 endif	# CPU_FREQ

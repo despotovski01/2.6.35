@@ -3025,7 +3025,6 @@ static int ext4_fill_super(struct super_block *sb, void *data, int silent)
 	set_task_ioprio(sbi->s_journal->j_task, journal_ioprio);
 
 no_journal:
-<<<<<<< HEAD
 	err = percpu_counter_init(&sbi->s_freeblocks_counter,
 				  ext4_count_free_blocks(sb));
 	if (!err)
@@ -3040,21 +3039,7 @@ no_journal:
 		ext4_msg(sb, KERN_ERR, "insufficient memory");
 		goto failed_mount_wq;
 	}
-	if (test_opt(sb, NOBH)) {
-		if (!(test_opt(sb, DATA_FLAGS) == EXT4_MOUNT_WRITEBACK_DATA)) {
-			ext4_msg(sb, KERN_WARNING, "Ignoring nobh option - "
-				"its supported only with writeback mode");
-			clear_opt(sbi->s_mount_opt, NOBH);
-		}
-		if (test_opt(sb, DIOREAD_NOLOCK)) {
-			ext4_msg(sb, KERN_WARNING, "dioread_nolock option is "
-				"not supported with nobh mode");
-			goto failed_mount_wq;
-		}
-	}
-=======
-	
->>>>>>> 3cf3f3e... UPDATE: misc ext4 tweaks
+
 	EXT4_SB(sb)->dio_unwritten_wq = create_workqueue("ext4-dio-unwritten");
 	if (!EXT4_SB(sb)->dio_unwritten_wq) {
 		printk(KERN_ERR "EXT4-fs: failed to create DIO workqueue\n");
