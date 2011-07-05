@@ -346,7 +346,6 @@ void display_table(struct display_table *table, unsigned int count)
         switch (reg) {
 			
             case REGFLAG_DELAY :
-                msleep(table[i].count);
 				EPRINTK("%s() : delay %d msec\n", __func__, table[i].count);
                 break;
 				
