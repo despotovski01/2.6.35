@@ -669,7 +669,8 @@ static int __devinit hs_rpc_init(void)
 
 	rc = hs_rpc_cb_init();
 
-#ifdef CONFIG_MACH_LGE
+//#ifdef CONFIG_MACH_LGE
+#if 0
 	/* FIXME: following code is from qualcomm's 2.6.32 kernel
 	 * in qualcomm's original code in 7020 version,
 	 * rpc server of handset can't be created in any case.
