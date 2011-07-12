@@ -31,7 +31,7 @@
  * 2010-03-03, cleaneye.kim@lge.com
  */
 #define MSM7X27_EBI1_CS0_BASE	PHYS_OFFSET
-#define LGE_RAM_CONSOLE_SIZE    (128 * SZ_1K * 2)
+#define LGE_RAM_CONSOLE_SIZE    (128 * SZ_1K)
 #endif
 
 /* define PMEM address size */
