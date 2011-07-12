@@ -172,6 +172,7 @@ static struct platform_device *thunderg_input_devices[] __initdata = {
 	&keypad_device_thunder,
 	//&thunderg_reset_keys_device,
 	&atcmd_virtual_device,
+	//&msm_device_tssc, /* touchscreen */
 };
 
 /* common function */

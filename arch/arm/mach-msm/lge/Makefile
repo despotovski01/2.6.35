@@ -21,6 +21,7 @@ obj-$(CONFIG_LGE_DIAGTEST) += lg_diag_wifi.o
 obj-$(CONFIG_MACH_MSM7X27_THUNDERG) += board-thunderg.o
 obj-$(CONFIG_MACH_MSM7X27_THUNDERG) += board-thunderg-mmc.o
 obj-$(CONFIG_MACH_MSM7X27_THUNDERG) += board-thunderg-snd.o
+obj-$(CONFIG_MACH_MSM7X27_THUNDERG) += board-swift-msm-touch.o
 obj-$(CONFIG_MACH_MSM7X27_THUNDERG) += board-thunderg-panel.o
 obj-$(CONFIG_MACH_MSM7X27_THUNDERG) += board-thunderg-bt.o
 obj-$(CONFIG_MACH_MSM7X27_THUNDERG) += board-thunderg-camera.o

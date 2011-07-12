@@ -410,6 +410,7 @@ static struct platform_device *devices[] __initdata = {
 	&msm_device_uart_dm1,
 	&msm_device_snd,
 	&msm_device_adspdec,
+	&msm_device_tssc,
 };
 
 extern struct sys_timer msm_timer;
